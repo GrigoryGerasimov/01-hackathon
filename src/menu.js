@@ -31,13 +31,13 @@ export class ContextMenu extends Menu {
             for (const module of this.modules) {
                 if (target.dataset.type === module.type) {
                     if (!isTriggered) {
+                        Array.from(document.body.children).forEach(child => {
+                            if (child.id !== 'menu') child.remove()
+                        })
                         module.trigger()
                         isTriggered = true
                     }
                 } else {
-                    Array.from(document.body.children).forEach(child => {
-                        if (child.id !== 'menu') child.remove()
-                    })
                     isTriggered = false
                 }
                 this.close()
