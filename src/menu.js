@@ -1,7 +1,8 @@
 import {Menu} from './core/menu'
 import {Module} from './core/module'
 import {ClicksModule} from './modules/clicks.module'
-import {TimerModule} from './modules/timer.module'
+import {PresetTimerModule} from './modules/presetTimer.module'
+import {CustomTimerModule} from "./modules/customTimer.module";
 
 export class ContextMenu extends Menu {
     constructor(selector) {
@@ -9,7 +10,7 @@ export class ContextMenu extends Menu {
 
         this.modules = []
 
-        this.add(new ClicksModule(), new TimerModule())
+        this.add(new ClicksModule(), new PresetTimerModule(), new CustomTimerModule())
 
         if (this.modules.length) this.modules.forEach(module => module.toHTML(this.el))
 
