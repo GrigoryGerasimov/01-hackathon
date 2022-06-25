@@ -1,6 +1,8 @@
 import {Module} from '../core/module'
 import {NodeCreator} from '../utils/NodeCreator/NodeCreator'
 import {validateFormat} from '../utils/customTimer/js/validateFormat'
+import {parseInput} from '../utils/presetTimer/js/parseInput'
+import {validateInput} from '../utils/presetTimer/js/validateInput'
 
 export class PresetTimerModule extends Module {
     constructor(type, text) {
@@ -20,9 +22,11 @@ export class PresetTimerModule extends Module {
             parent: presetTimerContainer
         })
 
-        const userInput = prompt(`На какое время Вы хотите поставить отсчёт таймера (формат 'мин:сек') ?`, `00:00`)
+        let userInput
 
-        const parseInput = requestedTime => requestedTime.split(':').map(Number)
+        do {
+            userInput = prompt(`Which time would you like to set for the timer (time format MM:SS) ?`, `00:00`)
+        } while (!validateInput(userInput))
 
         let [min, sec] = parseInput(userInput),
             ms = 99

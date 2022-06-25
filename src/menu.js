@@ -6,6 +6,7 @@ import { customMessage } from "./modules/custom.message.module";
 import { PresetTimerModule } from "./modules/presetTimer.module";
 import { CustomTimerModule } from "./modules/customTimer.module";
 import { pianoModule } from "./modules/piano.module";
+import { currentTimeInWorldCapitals } from "@/modules/currentTimesInWorldCapitals.module";
 
 export class ContextMenu extends Menu {
   constructor(selector) {
@@ -19,7 +20,8 @@ export class ContextMenu extends Menu {
       new customMessage(),
       new PresetTimerModule(),
       new CustomTimerModule(),
-      new pianoModule()
+      new pianoModule(),
+      new currentTimeInWorldCapitals()
     );
 
     if (this.modules.length)
