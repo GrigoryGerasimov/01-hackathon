@@ -5,6 +5,7 @@ import { randomSoundModule } from "./modules/sound.module";
 import { customMessage } from "./modules/custom.message.module";
 import { PresetTimerModule } from "./modules/presetTimer.module";
 import { CustomTimerModule } from "./modules/customTimer.module";
+import { pianoModule } from "./modules/piano.module";
 
 export class ContextMenu extends Menu {
   constructor(selector) {
@@ -17,7 +18,8 @@ export class ContextMenu extends Menu {
       new randomSoundModule(),
       new customMessage(),
       new PresetTimerModule(),
-      new CustomTimerModule()
+      new CustomTimerModule(),
+      new pianoModule()
     );
 
     if (this.modules.length)

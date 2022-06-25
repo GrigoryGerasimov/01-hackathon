@@ -1,0 +1,70 @@
+.keys {
+  display: block;
+  width: 100%;
+  height: 350px;
+  max-width: 880px;
+  position: relative;
+  margin: 40px auto 0;
+  cursor: none;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: large;
+  text-align: center;
+  color: rgb(153, 124, 81);
+}
+
+.key {
+  position: relative;
+  border: 4px solid black;
+  border-radius: 0.5rem;
+  transition: all 0.07s ease;
+  display: block;
+  box-sizing: border-box;
+  z-index: 2;
+}
+
+.key:not(.C-sharp, .D-sharp, .F-sharp, .G-sharp, .A-sharp) {
+  float: left;
+  width: 10%;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.8);
+}
+
+.C-sharp,
+.D-sharp,
+.F-sharp,
+.G-sharp,
+.A-sharp {
+  position: absolute;
+  width: 6%;
+  height: 60%;
+  background: #000;
+  color: #eee;
+  top: 0;
+  z-index: 3;
+}
+.C-sharp {
+  left: 7%;
+}
+
+.D-sharp {
+  left: 17%;
+}
+
+.F-sharp {
+  left: 27%;
+}
+
+.G-sharp {
+  left: 47%;
+}
+.A-sharp {
+  left: 57%;
+}
+.close-button {
+  position: absolute;
+  left: 40%;
+  margin: 15px;
+  padding: 15px;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: large;
+}
