@@ -1,8 +1,8 @@
 import {Module} from '../core/module'
 
-export class ClicksModule extends Module {
+export class TimerModule extends Module {
     constructor(type, text) {
-        super(type = 'clickStatistics', text = 'Считать клики (за 5 секунд)')
+        super(type = 'timer', text = 'Таймер отсчёта')
     }
 
     trigger() {}
