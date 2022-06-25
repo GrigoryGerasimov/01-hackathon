@@ -1,17 +1,18 @@
-import {HandleEventController} from './HandleEventController'
-import * as CommonVariables from '../commonVariables'
+import { HandleEventController } from "./HandleEventController";
+import * as CommonVariables from "../commonVariables";
+// import { setTimer } from "../setTimer";
 
-let {runningCounter} = CommonVariables
+let { runningCounter } = CommonVariables;
 
 export class Starter extends HandleEventController {
-    constructor(button) {
-        super()
-        this.button = button
-    }
+  constructor(button) {
+    super();
+    this.button = button;
+  }
 
-    click(evt) {
-        clearInterval(runningCounter)
-        runningCounter = setInterval(setTimer, 1)
-        this.button.textContent = 'Resume'
-    }
+  click(evt) {
+    clearInterval(runningCounter);
+    runningCounter = setInterval(setTimer, 1);
+    this.button.textContent = "Resume";
+  }
 }
