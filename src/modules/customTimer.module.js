@@ -1,9 +1,7 @@
 import '../utils/customTimer/css/customTimer.css'
 import {Module} from '../core/module'
 import {NodeCreator} from '../utils/NodeCreator/NodeCreator'
-import {Starter} from '../utils/customTimer/js/HandleEventConroller/Starter'
-import {Stopper} from '../utils/customTimer/js/HandleEventConroller/Stopper'
-import {Resetter} from '../utils/customTimer/js/HandleEventConroller/Resetter'
+import {validateFormat} from '../utils/customTimer/js/validateFormat'
 
 export class CustomTimerModule extends Module {
     constructor(type, text) {
@@ -53,6 +51,62 @@ export class CustomTimerModule extends Module {
             text: 'Reset',
             parent: btnBlock
         })
+
+        let min = 0,
+            sec = 0,
+            ms = 0,
+            runningCounter
+
+        const setTimer = () => {
+            timer.textContent = `${validateFormat(min)}:${validateFormat(sec)}:${validateFormat(ms)}`
+            ms++
+            if (ms > 99) {
+                ms = 0
+                sec++
+                if (sec > 59) {
+                    sec = 0
+                    min++
+                }
+            }
+        }
+
+        class HandleEventController {
+            handleEvent(evt) {
+                this[evt.type](evt)
+            }
+
+            click(evt) {
+            }
+        }
+
+        class Starter extends HandleEventController {
+            constructor(button) {
+                super()
+                this.button = button
+            }
+
+            click(evt) {
+                clearInterval(runningCounter)
+                runningCounter = setInterval(setTimer, 1)
+                this.button.textContent = 'Resume'
+            }
+        }
+
+        class Stopper extends HandleEventController {
+            click(evt) {
+                clearInterval(runningCounter)
+            }
+        }
+
+        class Resetter extends HandleEventController {
+            click(evt) {
+                timer.textContent = '00:00:00'
+                btnStart.textContent = 'Start'
+                min = 0
+                sec = 0
+                ms = 0
+            }
+        }
 
         const starterHandler = new Starter(btnStart),
             stopperHandler = new Stopper(),
