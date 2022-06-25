@@ -1,0 +1,22 @@
+*, * + * {
+    padding: 0;
+    margin: 0;
+    font-weight: 700
+}
+
+body {
+    width: 100%;
+    height: 660px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column
+}
+
+.timer-block {
+    width: fit-content;
+    display: flex;
+    flex-direction: row;
+    text-align: center;
+    line-height: 2rem
+}

@@ -1,0 +1,1 @@
+export const parseInput = requestedTime => requestedTime.split(':').map(Number)

@@ -1,0 +1,1 @@
+export const renderResult = (container, singleClicks, doubleClicks) => container.textContent = `The total amount of your single clicks makes ${singleClicks} and that of your double clicks makes ${doubleClicks}`
