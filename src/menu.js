@@ -23,11 +23,23 @@ export class ContextMenu extends Menu {
             this.open()
         })
 
+        let isTriggered = false
+
         this.el.addEventListener('click', event => {
             const {target} = event
 
             for (const module of this.modules) {
-                if (target.dataset.type === module.type) module.trigger()
+                if (target.dataset.type === module.type) {
+                    if (!isTriggered) {
+                        module.trigger()
+                        isTriggered = true
+                    }
+                } else {
+                    Array.from(document.body.children).forEach(child => {
+                        if (child.id !== 'menu') child.remove()
+                    })
+                    isTriggered = false
+                }
                 this.close()
             }
         })
