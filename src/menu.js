@@ -2,7 +2,6 @@ import { Menu } from "./core/menu";
 import { Module } from "./core/module";
 import { ClicksModule } from "./modules/clicks.module";
 import { randomSoundModule } from "./modules/sound.module";
-import { TimerModule } from "./modules/timer.module";
 import { customMessage } from "./modules/custom.message.module";
 import { PresetTimerModule } from "./modules/presetTimer.module";
 import { CustomTimerModule } from "./modules/customTimer.module";
@@ -15,7 +14,6 @@ export class ContextMenu extends Menu {
 
     this.add(
       new ClicksModule(),
-      new TimerModule(),
       new randomSoundModule(),
       new customMessage(),
       new PresetTimerModule(),
@@ -42,13 +40,13 @@ export class ContextMenu extends Menu {
       for (const module of this.modules) {
         if (target.dataset.type === module.type) {
           if (!isTriggered) {
+            Array.from(document.body.children).forEach((child) => {
+              if (child.id !== "menu") child.remove();
+            });
             module.trigger();
             isTriggered = true;
           }
         } else {
-          Array.from(document.body.children).forEach((child) => {
-            if (child.id !== "menu") child.remove();
-          });
           isTriggered = false;
         }
         this.close();
@@ -74,5 +72,6 @@ export class ContextMenu extends Menu {
         );
       this.modules.push(module);
     }
+    this.close();
   }
 }
