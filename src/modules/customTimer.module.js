@@ -34,21 +34,21 @@ export class CustomTimerModule extends Module {
             tag: 'button',
             id: 'start',
             type: 'button',
-            text: 'Start',
+            text: 'Старт',
             parent: btnBlock
         })
         const btnStop = new NodeCreator({
             tag: 'button',
             id: 'stop',
             type: 'button',
-            text: 'Stop',
+            text: 'Стоп',
             parent: btnBlock
         })
         const btnReset = new NodeCreator({
             tag: 'button',
             id: 'reset',
             type: 'button',
-            text: 'Reset',
+            text: 'Сброс',
             parent: btnBlock
         })
 
@@ -88,7 +88,7 @@ export class CustomTimerModule extends Module {
             click(evt) {
                 clearInterval(runningCounter)
                 runningCounter = setInterval(setTimer, 1)
-                this.button.textContent = 'Resume'
+                this.button.textContent = 'Продолжить'
             }
         }
 
@@ -101,7 +101,7 @@ export class CustomTimerModule extends Module {
         class Resetter extends HandleEventController {
             click(evt) {
                 timer.textContent = '00:00:00'
-                btnStart.textContent = 'Start'
+                btnStart.textContent = 'Старт'
                 min = 0
                 sec = 0
                 ms = 0

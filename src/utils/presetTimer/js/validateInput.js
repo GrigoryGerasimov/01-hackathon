@@ -1,10 +1,10 @@
 export const validateInput = input => {
     if (!input.includes(':')) {
-        alert('Please provide the required time in correct format!')
+        alert('Пожалуйста, введите данные в корректном формате!')
         return false
     } else if (isNaN(Number(input.slice(0, input.indexOf(':'))))
         || isNaN(Number(input.slice(input.indexOf(':')+1)))) {
-        alert('Please provide the minutes and seconds correctly as time!')
+        alert('К сожалению, параметры времени не были введены в числовом виде. Пожалуйста, попробуйте ещё раз!')
         return false
     }
     return true

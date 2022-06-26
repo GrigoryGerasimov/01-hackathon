@@ -12,7 +12,7 @@ export class PresetTimerModule extends Module {
     trigger() {
         const presetTimerContainer = new NodeCreator({
             tag: 'div',
-            id: 'presentTimerContainer',
+            id: 'presetTimerContainer',
             parent: document.body
         })
         const timer = new NodeCreator({
@@ -25,7 +25,7 @@ export class PresetTimerModule extends Module {
         let userInput
 
         do {
-            userInput = prompt(`Which time would you like to set for the timer (time format MM:SS) ?`, `00:00`)
+            userInput = prompt(`Задайте обратный отсчёт для таймера (формат МИН:СЕК) ?`, `00:00`).trim()
         } while (!validateInput(userInput))
 
         let [min, sec] = parseInput(userInput),
@@ -44,9 +44,13 @@ export class PresetTimerModule extends Module {
                     sec = 59
                     min--
                     if (min < 0) {
-                        clearInterval(countdownRunner)
-                        alert('Timer is over!')
-                        presetTimerContainer.remove()
+                        if (!document.querySelector('#presetTimerContainer')) {
+                            clearInterval(countdownRunner)
+                        } else {
+                            clearInterval(countdownRunner)
+                            alert('Отсчёт окончен. Спасибо!')
+                            presetTimerContainer.remove()
+                        }
                     }
                 }
 
