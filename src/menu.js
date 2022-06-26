@@ -25,7 +25,7 @@ export class ContextMenu extends Menu {
       new CustomTimerModule(),
       new pianoModule(),
       new currentTimeInWorldCapitals(),
-      new BlockRandomModule()
+      new BlockRandomModule(),
     );
 
     if (this.modules.length)
@@ -35,7 +35,7 @@ export class ContextMenu extends Menu {
       event.preventDefault();
 
       const contextmenuWidth = getMenuSize(this.el, 'width', 150),
-          contextmenuHeight = getMenuSize(this.el, 'height', 400)
+          contextmenuHeight = getMenuSize(this.el, 'height', 430)
 
       this.el.style.left = ((document.documentElement.clientWidth - event.clientX) < contextmenuWidth) ?
           `${document.documentElement.clientWidth - contextmenuWidth}px` : `${event.clientX}px`
