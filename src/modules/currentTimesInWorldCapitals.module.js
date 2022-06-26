@@ -9,10 +9,16 @@ export class currentTimeInWorldCapitals extends Module {
     }
 
     trigger() {
+        const mainContainer = new NodeCreator({
+            tag: 'div',
+            id: 'main-container',
+            parent: document.body
+        })
+
         const londonBlock = new NodeCreator({
             tag: 'article',
             id: 'london',
-            parent: document.body
+            parent: mainContainer
         })
         const londonTitle = new NodeCreator({
             tag: 'span',
@@ -29,7 +35,7 @@ export class currentTimeInWorldCapitals extends Module {
         const berlinBlock = new NodeCreator({
             tag: 'article',
             id: 'berlin',
-            parent: document.body
+            parent: mainContainer
         })
         const berlinTitle = new NodeCreator({
             tag: 'span',
@@ -46,7 +52,7 @@ export class currentTimeInWorldCapitals extends Module {
         const moscowBlock = new NodeCreator({
             tag: 'article',
             id: 'moscow',
-            parent: document.body
+            parent: mainContainer
         })
         const moscowTitle = new NodeCreator({
             tag: 'span',
@@ -62,7 +68,7 @@ export class currentTimeInWorldCapitals extends Module {
         const delhiBlock = new NodeCreator({
             tag: 'article',
             id: 'delhi',
-            parent: document.body
+            parent: mainContainer
         })
         const delhiTitle = new NodeCreator({
             tag: 'span',
@@ -78,7 +84,7 @@ export class currentTimeInWorldCapitals extends Module {
         const beijingBlock = new NodeCreator({
             tag: 'article',
             id: 'beijing',
-            parent: document.body
+            parent: mainContainer
         })
         const beijingTitle = new NodeCreator({
             tag: 'span',
@@ -94,7 +100,7 @@ export class currentTimeInWorldCapitals extends Module {
         const tokioBlock = new NodeCreator({
             tag: 'article',
             id: 'tokio',
-            parent: document.body
+            parent: mainContainer
         })
         const tokioTitle = new NodeCreator({
             tag: 'span',
@@ -110,7 +116,7 @@ export class currentTimeInWorldCapitals extends Module {
         const sydneyBlock = new NodeCreator({
             tag: 'article',
             id: 'sydney',
-            parent: document.body
+            parent: mainContainer
         })
         const sydneyTitle = new NodeCreator({
             tag: 'span',
@@ -126,7 +132,7 @@ export class currentTimeInWorldCapitals extends Module {
         const washingtonBlock = new NodeCreator({
             tag: 'article',
             id: 'washington',
-            parent: document.body
+            parent: mainContainer
         })
         const washingtonTitle = new NodeCreator({
             tag: 'span',
@@ -142,7 +148,7 @@ export class currentTimeInWorldCapitals extends Module {
         const newyorkBlock = new NodeCreator({
             tag: 'article',
             id: 'newyork',
-            parent: document.body
+            parent: mainContainer
         })
         const newyorkTitle = new NodeCreator({
             tag: 'span',
