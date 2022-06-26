@@ -9,6 +9,7 @@ import { pianoModule } from "./modules/piano.module";
 import { getMenuSize } from "./utils";
 import { currentTimeInWorldCapitals } from "@/modules/currentTimesInWorldCapitals.module";
 import { BlockRandomModule } from "./modules/randomFigure.module";
+import { SnakeGame } from './modules/snakeGame.module'
 
 
 export class ContextMenu extends Menu {
@@ -26,6 +27,7 @@ export class ContextMenu extends Menu {
       new pianoModule(),
       new currentTimeInWorldCapitals(),
       new BlockRandomModule(),
+        new SnakeGame()
     );
 
     if (this.modules.length)
