@@ -1,0 +1,10 @@
+.timer-block {
+    width: fit-content;
+    margin: auto;
+    display: flex;
+    flex-direction: row;
+    text-align: center;
+    line-height: 2rem;
+    color: #343434;
+    text-transform: none
+}

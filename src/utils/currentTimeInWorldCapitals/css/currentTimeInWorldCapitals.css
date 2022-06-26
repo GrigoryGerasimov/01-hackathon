@@ -1,0 +1,20 @@
+#main-container {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    flex-direction: row;
+    color: #343434
+}
+
+article {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    line-height: 2rem
+}
+
+article > span {
+    border-bottom: 1px solid #d6d6d6
+}

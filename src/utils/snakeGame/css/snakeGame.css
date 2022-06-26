@@ -1,0 +1,76 @@
+body, .container, .viewscreen {
+    height: 100vh;
+}
+
+body {
+    font-size: 1.5rem;
+    color: hsl(0, 86%, 94%);
+    text-shadow: 0 0 3px #fff;
+    overflow: hidden;
+    text-transform: capitalize;
+}
+
+.viewscreen, .difficulty-level-box-group, .gameboard{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.viewscreen {
+    flex-direction: column;
+    background: #222;
+    transition: margin 900ms ease-in-out;
+}
+
+.viewscreen.upwards{
+    margin-top: -100vh;
+}
+
+.title{
+    margin-bottom: 50px;
+}
+.title.gameboard-title{
+    text-transform: none;
+    margin-bottom: 20px;
+}
+
+.new-start, .difficulty-level-box>a {
+    font-size: 1em;
+    font-weight: 700;
+    text-decoration: none;
+    color: inherit;
+}
+
+.title:hover, .title:focus, .new-start:hover, .new-start:focus, .difficulty-level-box:hover a, .difficulty-level-box:focus a{
+    text-shadow: none;
+}
+
+.new-start:hover, .new-start:focus, .difficulty-level-box:hover, .difficulty-level-box:focus{
+    color: darkorange;
+}
+
+.difficulty-level-box-group{
+    flex-direction: row;
+}
+
+.difficulty-level-box{
+    padding: 10px 20px;
+    margin: 0 10px;
+}
+
+.gameboard{
+    width: 70vw;
+    height: 70vh;
+    background-color: rgb(24, 24, 24);
+    border-radius: 20px;
+    position: relative;
+    overflow: hidden;
+    flex-direction: column;
+}
+.gameboard>p{
+    text-transform: none;
+    line-height: 60px;
+}
+.gameboard>p strong{
+    font-size: 1.5em;
+}

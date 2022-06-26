@@ -1,0 +1,1 @@
+export const validateFormat = timeUnit => (timeUnit < 10) ? `0${timeUnit}` : timeUnit
