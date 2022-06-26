@@ -1,3 +1,4 @@
+import '../utils/presetTimer/css/presetTimer.css'
 import {Module} from '../core/module'
 import {NodeCreator} from '../utils/NodeCreator/NodeCreator'
 import {validateFormat} from '../utils/customTimer/js/validateFormat'
