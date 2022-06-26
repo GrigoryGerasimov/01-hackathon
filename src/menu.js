@@ -30,8 +30,14 @@ export class ContextMenu extends Menu {
     document.body.addEventListener("contextmenu", (event) => {
       event.preventDefault();
 
-      this.el.style.top = `${event.clientY}px`;
-      this.el.style.left = `${event.clientX}px`;
+      const contextmenuWidth = parseInt(getComputedStyle(this.el).width),
+          contextmenuHeight = parseInt(getComputedStyle(this.el).height)
+
+      this.el.style.left = ((document.documentElement.clientWidth - event.clientX) < contextmenuWidth) ?
+          `${document.documentElement.clientWidth - contextmenuWidth}px` : `${event.clientX}px`
+
+      this.el.style.top = ((document.documentElement.clientHeight - event.clientY) < contextmenuHeight) ?
+          `${document.documentElement.clientHeight - contextmenuHeight}px` : `${event.clientY}px`
 
       this.open();
     });
