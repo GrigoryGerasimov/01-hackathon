@@ -1,0 +1,1 @@
+export const isIdenticalTo = (obj1, obj2) => obj1.coordX === obj2.coordX && obj1.coordY === obj2.coordY
