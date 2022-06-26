@@ -6,7 +6,8 @@ import { customMessage } from "./modules/custom.message.module";
 import { PresetTimerModule } from "./modules/presetTimer.module";
 import { CustomTimerModule } from "./modules/customTimer.module";
 import { pianoModule } from "./modules/piano.module";
-import { currentTimeInWorldCapitals } from "@/modules/currentTimesInWorldCapitals.module";
+import { currentTimeInWorldCapitals } from "./modules/currentTimesInWorldCapitals.module";
+import { getMenuSize } from "./utils";
 
 export class ContextMenu extends Menu {
   constructor(selector) {
@@ -30,8 +31,8 @@ export class ContextMenu extends Menu {
     document.body.addEventListener("contextmenu", (event) => {
       event.preventDefault();
 
-      const contextmenuWidth = parseInt(getComputedStyle(this.el).width),
-          contextmenuHeight = parseInt(getComputedStyle(this.el).height)
+      const contextmenuWidth = getMenuSize(this.el, 'width', 150),
+          contextmenuHeight = getMenuSize(this.el, 'height', 360)
 
       this.el.style.left = ((document.documentElement.clientWidth - event.clientX) < contextmenuWidth) ?
           `${document.documentElement.clientWidth - contextmenuWidth}px` : `${event.clientX}px`
