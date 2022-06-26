@@ -8,7 +8,13 @@ export class customMessage extends Module {
     const message = document.createElement("div");
     message.classList.add("message");
 
-    const date = `${new Date().getHours()}:${new Date().getMinutes()}`;
+    const date = `${dateLength(new Date().getHours())}:${dateLength(
+      new Date().getMinutes()
+    )}`;
+    function dateLength(date) {
+      date < 10 ? (date = "0" + date) : date;
+      return date;
+    }
     message.textContent = `Время: ${date}`;
     document.body.append(message);
 

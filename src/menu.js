@@ -6,8 +6,10 @@ import { customMessage } from "./modules/custom.message.module";
 import { PresetTimerModule } from "./modules/presetTimer.module";
 import { CustomTimerModule } from "./modules/customTimer.module";
 import { pianoModule } from "./modules/piano.module";
-import { currentTimeInWorldCapitals } from "./modules/currentTimesInWorldCapitals.module";
 import { getMenuSize } from "./utils";
+import { currentTimeInWorldCapitals } from "@/modules/currentTimesInWorldCapitals.module";
+import { BlockRandomModule } from "./modules/randomFigure.module";
+
 
 export class ContextMenu extends Menu {
   constructor(selector) {
@@ -22,7 +24,8 @@ export class ContextMenu extends Menu {
       new PresetTimerModule(),
       new CustomTimerModule(),
       new pianoModule(),
-      new currentTimeInWorldCapitals()
+      new currentTimeInWorldCapitals(),
+      new BlockRandomModule()
     );
 
     if (this.modules.length)
