@@ -1,7 +1,7 @@
 export class NodeCreator {
     constructor(data) {
-        const {tag, classId, id, type, href, intervalcounter, text, parent} = data
-        Object.assign(this, {tag, classId, id, type, href, intervalcounter, text, parent})
+        const {tag, classId, id, type, href, src, intervalcounter, text, parent} = data
+        Object.assign(this, {tag, classId, id, type, href, src, intervalcounter, text, parent})
         return this.create()
     }
 
@@ -11,6 +11,7 @@ export class NodeCreator {
         this.validateProps(node, 'id', this.id)
         this.validateProps(node, 'type', this.type)
         this.validateProps(node, 'href', this.href)
+        this.validateProps(node, 'src', this.src)
         this.validateProps(node, 'data-intervalcounter', this.intervalcounter)
         node.textContent = (this.text) ? this.text : ''
 
