@@ -9,7 +9,11 @@ export class customMessage extends Module {
     message.classList.add("message");
 
     const date = `${new Date().getHours()}:${new Date().getMinutes()}`;
-    message.textContent = `Время: ${date}`;
+    function dateLength(date) {
+      date < 10 ? (date = "0" + date) : date;
+      return date;
+    }
+    message.textContent = `Время: ${dateLength(date)}`;
     document.body.append(message);
 
     setTimeout(() => {
