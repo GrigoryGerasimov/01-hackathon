@@ -5,7 +5,7 @@ import {validateFormat} from '../utils/customTimer/js/validateFormat'
 
 export class CustomTimerModule extends Module {
     constructor(type, text) {
-        super(type = 'customTimer', text = 'Кастомный таймер')
+        super(type = 'customTimer', text = 'Секундомер')
     }
 
     trigger() {
