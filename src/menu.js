@@ -11,6 +11,7 @@ import { currentTimeInWorldCapitals } from "@/modules/currentTimesInWorldCapital
 import { BlockRandomModule } from "./modules/randomFigure.module";
 import { SnakeGame } from './modules/snakeGame.module'
 import { DailyQuotesModule } from './modules/dailyQuotes.module'
+import { ColorChange } from './modules/colorChange.module'
 
 
 export class ContextMenu extends Menu {
@@ -29,7 +30,8 @@ export class ContextMenu extends Menu {
       new currentTimeInWorldCapitals(),
       new BlockRandomModule(),
         new SnakeGame(),
-        new DailyQuotesModule()
+        new DailyQuotesModule(),
+        new ColorChange()
     );
 
     if (this.modules.length)
@@ -39,7 +41,7 @@ export class ContextMenu extends Menu {
       event.preventDefault();
 
       const contextmenuWidth = getMenuSize(this.el, 'width', 150),
-          contextmenuHeight = getMenuSize(this.el, 'height', 430)
+          contextmenuHeight = getMenuSize(this.el, 'height', 500)
 
       this.el.style.left = ((document.documentElement.clientWidth - event.clientX) < contextmenuWidth) ?
           `${document.documentElement.clientWidth - contextmenuWidth}px` : `${event.clientX}px`
